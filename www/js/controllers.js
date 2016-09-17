@@ -2,6 +2,39 @@ angular.module('starter.controllers', [])
 
 .controller('DashCtrl', function($scope) {})
 
+
+.controller('teclas', function($scope, $cordovaVibration, $cordovaFlashlight) {
+
+  $scope.Acciones = function(){  
+    $cordovaVibration.vibrate(100);   
+  };  
+
+  $scope.Linterna = function(){  
+    $cordovaFlashlight.available().then(function(availability) {
+    var avail = availability; // is available
+  }, function () {
+    // unavailable
+  });
+
+  $cordovaFlashlight.switchOn()
+    .then(
+      function (success) { /* success */ },
+      function (error) { /* error */ });
+
+  $cordovaFlashlight.switchOff()
+    .then(
+      function (success) { /* success */ },
+      function (error) { /* error */ });
+
+  $cordovaFlashlight.toggle()
+    .then(function (success) { /* success */ },
+      function (error) { /* error */ });
+  } //Fin funcion Linterna
+}) //Fin controller "teclas" 
+
+
+
+
 .controller('ChatsCtrl', function($scope, Chats) {
   // With the new view caching in Ionic, Controllers are only called
   // when they are recreated or on app start, instead of every page change.
