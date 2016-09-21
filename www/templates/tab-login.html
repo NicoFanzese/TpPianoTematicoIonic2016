@@ -1,0 +1,55 @@
+<script type="text/javascript">
+
+	function validarUsuario(){	
+
+		var ref = new Firebase("https://logintpsutn.firebaseio.com/");
+
+		ref.authWithPassword({
+		  email    : usuario.value,
+		  password : password.value
+		}, function(error, authData) {
+		  if (error) {
+		  	usuario.value="";
+		  	password.value="";		  	
+		  	document.getElementById("mensaje").style.display='inline';		  	
+		  	document.getElementById("mensaje").style.color = "#F90814";
+		  	//window.location="http://www.youtube.com";		  		  	
+		  } else {
+		  	mensaje.disabled=true;
+		  	usuario.value="";
+		  	password.value="";
+
+		  	location.href = "#/tab/trivia";		  	
+		  	location.reload();
+		  	document.getElementById("mensaje").style.display='none';		  	
+		    //console.log("Authenticated successfully with payload:", authData);
+		  }
+		});
+	}	
+</script>
+
+
+<form>	
+	<center>	
+		<ion-view view-title="Login" name="login-view">
+		  <ion-content class="padding">
+		      <div class="list list-inset" width="70%">
+				  <br>
+				  <br>
+				  <br>
+		          <label class="item item-input">
+		              <input type="text" id="usuario" placeholder="Username"  width= "70%" height="70%" ng-model="data.username">
+		          </label>
+		          <label class="item item-input" width="70%">
+		              <input type="password" id="password" placeholder="Password"  width= "70%" height="70%" ng-model="data.password">
+		          </label>
+		          <label style="display:none" id="mensaje" >Login Incorrecto!</label>
+		      </div>
+		      
+		      <button class="button button-block button-calm" width= "70%" height="70%" onClick="validarUsuario()">Login</button>
+		     
+		  </ion-content>
+		</ion-view>
+
+	</center>
+</form>
