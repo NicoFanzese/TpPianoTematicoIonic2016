@@ -58,8 +58,8 @@ $scope.Grillo = function(){
 
       //Sonido
       $cordovaNativeAudio
-       .preloadSimple('click', 'audios/grillo.mp3')
-      $cordovaNativeAudio.play('click');    
+       .preloadSimple('click1', 'audios/grillo.mp3')
+      $cordovaNativeAudio.play('click1');    
     } catch (e) {
         console.log("Esta ejecutando la aplicacion desde la PC",e);
         //throw e; // rethrow to not marked as handled
@@ -73,8 +73,8 @@ $scope.Grillo = function(){
 
       //Sonido
       $cordovaNativeAudio
-       .preloadSimple('click', 'audios/oveja.mp3')
-      $cordovaNativeAudio.play('click');    
+       .preloadSimple('click2', 'audios/oveja.mp3')
+      $cordovaNativeAudio.play('click2');    
     } catch (e) {
         console.log("Esta ejecutando la aplicacion desde la PC",e);
         //throw e; // rethrow to not marked as handled
@@ -88,8 +88,8 @@ $scope.Grillo = function(){
 
       //Sonido
       $cordovaNativeAudio
-       .preloadSimple('click', 'audios/cardenal.mp3')
-      $cordovaNativeAudio.play('click');    
+       .preloadSimple('click3', 'audios/cardenal.mp3')
+      $cordovaNativeAudio.play('click3');    
     } catch (e) {
         console.log("Esta ejecutando la aplicacion desde la PC",e);
         //throw e; // rethrow to not marked as handled
